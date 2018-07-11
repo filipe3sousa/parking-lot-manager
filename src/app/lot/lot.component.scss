@@ -1,0 +1,23 @@
+.lot {
+    margin-bottom: 20px;
+
+    span.status {
+        color: green;
+    }
+
+    &.unavailable {
+        opacity: 0.5;
+
+        img {
+            filter: grayscale(100%);   
+        }
+
+        span.status {
+            color: red;
+        }
+
+        button {
+            visibility: hidden;
+        }
+    }
+}

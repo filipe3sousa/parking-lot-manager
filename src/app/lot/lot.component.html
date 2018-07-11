@@ -1,0 +1,30 @@
+<div *ngIf="lot" class="card lot" [class.unavailable]="!lot.available">
+  
+    <!--Card image-->
+    <div class="view hm-white-slight waves-light" mdbWavesEffect>
+        <img src="https://www.crisisprevention.com/CPI/media/Media/images/parking-lot-187577340.jpg" class="img-fluid" alt="">
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+        <!--Title-->
+        <h2 class="card-title">{{lot.number}}</h2>
+        <!--Status-->
+        <h4>
+            Status: 
+            <div *ngIf="lot.available; then available else unavailable"></div> 
+            <ng-template #available>
+                <span class="status">free</span>
+            </ng-template>
+            <ng-template #unavailable>
+                <span class="status">occupied</span>
+            </ng-template>
+        </h4>
+        <!--Action-->
+        <button class="btn btn-primary waves-light" mdbWavesEffect (click)="bookLot()">Book lot</button>
+    </div>
+
+</div>
